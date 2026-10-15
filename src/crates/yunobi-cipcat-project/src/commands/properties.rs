@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! What a placed clip looks and sounds like: its patchable fields, speed, transform, keys and cutout.
 //!

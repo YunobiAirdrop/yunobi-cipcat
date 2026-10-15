@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! The picture the cursor carries while something is dragged out of the
 //! library or a panel out of its seat.

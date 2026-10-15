@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! Writing RGBA frames back out to a file.
 

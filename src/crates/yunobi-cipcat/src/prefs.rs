@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! What the window remembers between runs, as one small JSON file in the
 //! app's config directory. None of it is project state: the theme, which

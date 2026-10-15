@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! Compiles the Java the activity needs - the document picker fragment in
 //! java/ - into one dex file the binary carries and loads at run time.

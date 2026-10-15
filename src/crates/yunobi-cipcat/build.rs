@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
-// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop
 
 //! Compiles the `.slint` tree into the binary and records three facts about
 //! the build for Settings > About.
@@ -84,7 +83,7 @@ fn main() {
             .set("FileDescription", "Yunobi Cipcat")
             .set(
                 "LegalCopyright",
-                "Copyright 2026 Jareer and Yunobi Cipcat contributors, AGPL-3.0-or-later",
+                "Copyright 2026 YunobiAirdrop, AGPL-3.0-or-later",
             )
             .compile()
             .expect("could not embed the Windows icon");
