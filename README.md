@@ -2,7 +2,7 @@
 <table width="100%">
   <tr>
     <td align="left" width="120">
-      <img src="https://cdn.jsdelivr.net/gh/jub0t/concat@main/assets/yunobi-cipcat-mark-dark.png" alt="Yunobi Cipcat" width="100" />
+      <img src="https://cdn.jsdelivr.net/gh/YunobiAirdrop/yunobi-cipcat@main/assets/yunobi-cipcat-mark-dark.png" alt="Yunobi Cipcat" width="100" />
     </td>
     <td align="">
       <h1>Yunobi Cipcat</h1>
@@ -11,19 +11,19 @@
   </tr>
 </table>
 
-<img src="https://cdn.jsdelivr.net/gh/jub0t/concat@main/assets/editor.png" alt="Yunobi Cipcat editor" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/YunobiAirdrop/yunobi-cipcat@main/assets/editor.png" alt="Yunobi Cipcat editor" width="100%" />
 
 <p align="center">
-  <a href="https://github.com/jub0t/concat/releases"><img src="https://img.shields.io/github/downloads/jub0t/concat/total?style=flat-square&logo=github&logoColor=F8F8F8&label=Downloads&labelColor=212123&color=0568FD" alt="Total Downloads" /></a>
-  <a href="https://github.com/jub0t/concat/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/jub0t/concat/ci.yml?style=flat&logo=githubactions&logoColor=F8F8F8&label=Build&labelColor=000000" alt="Build Status" /></a>
-  <a href="https://github.com/jub0t/concat/releases"><img src="https://img.shields.io/badge/Version-0.2.7-0568FD?style=flat-square&logo=semver&logoColor=F8F8F8&labelColor=212123" alt="Yunobi Cipcat Version 0.2.5" /></a>
+  <a href="https://github.com/YunobiAirdrop/yunobi-cipcat/releases"><img src="https://img.shields.io/github/downloads/YunobiAirdrop/yunobi-cipcat/total?style=flat-square&logo=github&logoColor=F8F8F8&label=Downloads&labelColor=212123&color=0568FD" alt="Total Downloads" /></a>
+  <a href="https://github.com/YunobiAirdrop/yunobi-cipcat/actions"><img src="https://img.shields.io/github/actions/workflow/status/YunobiAirdrop/yunobi-cipcat/ci.yml?style=flat&logo=githubactions&logoColor=F8F8F8&label=Build&labelColor=000000" alt="Build Status" /></a>
+  <a href="https://github.com/YunobiAirdrop/yunobi-cipcat/releases"><img src="https://img.shields.io/badge/Version-0.2.7-0568FD?style=flat-square&logo=semver&logoColor=F8F8F8&labelColor=212123" alt="Yunobi Cipcat Version 0.2.5" /></a>
   <a href="https://discord.gg/DVuPfpXfqP"><img src="https://img.shields.io/badge/Discord-Join%20the%20server-5865F2?style=flat&logo=discord&logoColor=F8F8F8&labelColor=000000" alt="Join Yunobi Cipcat Discord" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL%20v3-0568FD?style=flat-square&logo=gnu&logoColor=F8F8F8&labelColor=212123" alt="License: AGPL-3.0-or-later" /></a>
   <a href="https://concatenate.pages.dev/#sponsor"><img src="https://img.shields.io/badge/Sponsor-Yunobi Cipcat-0568FD?style=flat-square&labelColor=212123" alt="Sponsor Yunobi Cipcat" /></a>
 </p>
 
 <p align="center">
-  <a href="https://concatenate.pages.dev/#download"><img src="https://cdn.jsdelivr.net/gh/jub0t/concat@main/assets/download_button.svg" alt="Download Yunobi Cipcat" width="220" /></a>
+  <a href="https://concatenate.pages.dev/#download"><img src="https://cdn.jsdelivr.net/gh/YunobiAirdrop/yunobi-cipcat@main/assets/download_button.svg" alt="Download Yunobi Cipcat" width="220" /></a>
 </p>
 
 **🇬🇧 English** · [🇩🇪 Deutsch](docs/README.de.md) · [🇪🇸 Español](docs/README.es.md) · [🇫🇷 Français](docs/README.fr.md) · [🇮🇹 Italiano](docs/README.it.md) · [🇳🇱 Nederlands](docs/README.nl.md) · [🇵🇱 Polski](docs/README.pl.md) · [🇧🇷 Português (Brasil)](docs/README.pt-BR.md) · [🇷🇺 Русский](docs/README.ru.md) · [🇺🇦 Українська](docs/README.uk.md) · [🇹🇷 Türkçe](docs/README.tr.md) · [🇭🇷 Hrvatski](docs/README.hr.md) · [🇮🇩 Bahasa Indonesia](docs/README.id.md) · [🇻🇳 Tiếng Việt](docs/README.vi.md) · [🇹🇭 ไทย](docs/README.th.md) · [🇯🇵 日本語](docs/README.ja.md) · [🇰🇷 한국어](docs/README.ko.md) · [🇨🇳 简体中文](docs/README.zh-Hans.md) · [🇹🇼 繁體中文](docs/README.zh-TW.md) · [🇸🇦 العربية](docs/README.ar.md) · [🇮🇱 עברית](docs/README.he.md) · [🇮🇷 فارسی](docs/README.fa.md) · [🇮🇳 हिन्दी](docs/README.hi.md) · [🇵🇰 اردو](docs/README.ur.md) · [🇧🇩 বাংলা](docs/README.bn.md)
@@ -33,9 +33,9 @@
 <table width="100%">
   <tr>
     <td align="center" width="50%">
-      <a href="https://proxyon.io/?ref=yunobi-cipcat"><img src="https://cdn.jsdelivr.net/gh/jub0t/concat@main/assets/proxyon_sponsor_logo.png" alt="Proxyon" width="80" /></a><br />
+      <a href="https://proxyon.io/?ref=yunobi-cipcat"><img src="https://cdn.jsdelivr.net/gh/YunobiAirdrop/yunobi-cipcat@main/assets/proxyon_sponsor_logo.png" alt="Proxyon" width="80" /></a><br />
       <a href="https://proxyon.io/?ref=yunobi-cipcat"><b>Proxyon</b></a><br />
-      <sub>Pay-as-you-go proxies for developers<br />Use code <code>JUB0T</code> for 20% off</sub>
+      <sub>Pay-as-you-go proxies for developers<br />Use code <code>YUNOBI</code> for 20% off</sub>
     </td>
     <td align="center" width="50%">
       <a href="https://concatenate.pages.dev/#sponsor"><b>Your logo here</b></a><br />
@@ -49,8 +49,8 @@
 
 ## About
 
-> **Yunobi Cipcat** adalah rebrand dari [Concat](https://github.com/jub0t/concat) (AGPL-3.0-or-later) oleh jub0t.
-> Seluruh kode sumber asli tetap dilisensikan di bawah AGPL-3.0 — lihat [LICENSE](LICENSE).
+> **Yunobi Cipcat** — editor video gratis dan open-source oleh [YunobiAirdrop](https://github.com/YunobiAirdrop).
+> Dilisesikan di bawah AGPL-3.0-or-later — lihat [LICENSE](LICENSE).
 
 
 Yunobi Cipcat is a free, open-source video editor and a CapCut alternative for macOS, Windows, Linux and Android. It covers what people actually open CapCut for: auto-captions, text-to-speech, background removal, keyframe animation, effects and titles, multi-track cutting, 4K export. With none of the catches: no watermark, no account, no subscription, no upload.
@@ -84,9 +84,9 @@ Everything runs locally on a native Rust engine with a GPU compositor. Install i
 Two ways in:
 
 1. **[The website](https://concatenate.pages.dev/#download)** hands you the right build for your machine. Start here.
-2. **[GitHub Releases](https://github.com/jub0t/concat/releases)** has every build for every platform, with installers, packages and checksums. For when you want to pick.
+2. **[GitHub Releases](https://github.com/YunobiAirdrop/yunobi-cipcat/releases)** has every build for every platform, with installers, packages and checksums. For when you want to pick.
 
-Yunobi Cipcat is in **beta**: it works, and it still has edges. [Say so](https://github.com/jub0t/concat/issues) when you find one.
+Yunobi Cipcat is in **beta**: it works, and it still has edges. [Say so](https://github.com/YunobiAirdrop/yunobi-cipcat/issues) when you find one.
 
 **Platforms**
 
@@ -105,38 +105,38 @@ Yunobi Cipcat is in **beta**: it works, and it still has edges. [Say so](https:/
 ## How to Contribute
 
 > [!IMPORTANT]
-> The best way to contribute is to grab a build from the [Releases](https://github.com/jub0t/concat/releases) page and use it: find where it breaks, and say where it could be better.
+> The best way to contribute is to grab a build from the [Releases](https://github.com/YunobiAirdrop/yunobi-cipcat/releases) page and use it: find where it breaks, and say where it could be better.
 >
-> Ready to write code? [CONTRIBUTING.md](./CONTRIBUTING.md) covers setup, the layout of the tree, the checks to run, and how contributions are licensed. Driving Yunobi Cipcat from a script, a service or an agent? [The developer docs](https://concatenate.pages.dev/docs) cover the Yunobi Cipcat API and its transports: JSON-RPC, gRPC and MCP. [This Discussion](https://github.com/jub0t/concat/discussions/3) is where the project was announced.
+> Ready to write code? [CONTRIBUTING.md](./CONTRIBUTING.md) covers setup, the layout of the tree, the checks to run, and how contributions are licensed. Driving Yunobi Cipcat from a script, a service or an agent? [The developer docs](https://concatenate.pages.dev/docs) cover the Yunobi Cipcat API and its transports: JSON-RPC, gRPC and MCP.
 > 
 > Contributors are free to claim a `@Contributor` role in the Discord server, just ask for it.
 
 ## Contributors
 
-<a href="https://github.com/jub0t/concat/graphs/contributors">
-  <img alt="Contributors" src="https://contrib.rocks/image?repo=jub0t/concat">
+<a href="https://github.com/YunobiAirdrop/yunobi-cipcat/graphs/contributors">
+  <img alt="Contributors" src="https://contrib.rocks/image?repo=YunobiAirdrop/yunobi-cipcat">
 </a>
 
 ## Star History
 
 <p align="center">
- <a href="https://www.star-history.com/jub0t/concat">
+ <a href="https://www.star-history.com/YunobiAirdrop/yunobi-cipcat">
   <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=jub0t/concat&type=rank&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=jub0t/concat&type=rank" />
-   <img alt="Star History Rank" src="https://api.star-history.com/badge?repo=jub0t/concat&type=rank" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=YunobiAirdrop/yunobi-cipcat&type=rank&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=YunobiAirdrop/yunobi-cipcat&type=rank" />
+   <img alt="Star History Rank" src="https://api.star-history.com/badge?repo=YunobiAirdrop/yunobi-cipcat&type=rank" />
   </picture>
  </a>
 </p>
 
-<a href="https://www.star-history.com/?repos=jub0t%2Fconcat&type=date&releases=&legend=bottom-right">
+<a href="https://www.star-history.com/?repos=YunobiAirdrop%2Fyunobi-cipcat&type=date&releases=&legend=bottom-right">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=jub0t/concat&type=date&theme=dark&legend=bottom-right" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=jub0t/concat&type=date&legend=bottom-right" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=jub0t/concat&type=date&legend=bottom-right" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=YunobiAirdrop/yunobi-cipcat&type=date&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=YunobiAirdrop/yunobi-cipcat&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=YunobiAirdrop/yunobi-cipcat&type=date&legend=bottom-right" />
  </picture>
 </a>
 
 ## DMCA
 
-If you believe something in this repository, its releases, or a package or model it distributes infringes your copyright, email [jub0trd@gmail.com](mailto:jub0trd@gmail.com) with a description of the work you own, a link to where the infringing material appears here, your contact details, a statement that you believe in good faith the use is not authorised by you, your agent, or the law, and a statement, under penalty of perjury, that the notice is accurate and that you are the owner or authorised to act for the owner, signed with your physical or electronic signature; valid notices are acted on promptly, and anyone whose material is removed may send a counter-notice to the same address.
+If you believe something in this repository, its releases, or a package or model it distributes infringes your copyright, email [khususstokyunobi@gmail.com](mailto:khususstokyunobi@gmail.com) with a description of the work you own, a link to where the infringing material appears here, your contact details, a statement that you believe in good faith the use is not authorised by you, your agent, or the law, and a statement, under penalty of perjury, that the notice is accurate and that you are the owner or authorised to act for the owner, signed with your physical or electronic signature; valid notices are acted on promptly, and anyone whose material is removed may send a counter-notice to the same address.
