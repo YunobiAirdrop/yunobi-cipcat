@@ -6,7 +6,7 @@
 //! winit 0.30 reports a dropped file on macOS, Windows and X11 and not on
 //! Wayland: its Wayland backend never asks the seat for a data device, so
 //! a drag from a file manager over the window is simply not heard
-//! (<https://github.com/jub0t/concat/issues/158>, #196). The window asks
+//! (<https://github.com/YunobiAirdrop/yunobi-cipcat/issues/158>, #196). The window asks
 //! for one itself. It joins the connection winit opened - the same
 //! `wl_display`, as a guest that does not close it - with an event queue
 //! of its own on a thread of its own, binds the seat and the data device

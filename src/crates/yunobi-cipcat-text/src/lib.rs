@@ -626,7 +626,7 @@ fn draws(face: &ttf_parser::Face<'_>, ch: char) -> Option<Draw> {
 /// face simple enough to follow - solid fills over outlines, which is all
 /// a layered emoji face needs. A monochrome strike is not one; that is
 /// the outline's job, done better. An `SVG` document would want another
-/// renderer whole, and stays out. https://github.com/jub0t/concat/issues/276
+/// renderer whole, and stays out. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/276
 fn own_colours(face: &ttf_parser::Face<'_>, glyph: ttf_parser::GlyphId) -> bool {
     if let Some(image) = face.glyph_raster_image(glyph, u16::MAX)
         && matches!(
@@ -737,7 +737,7 @@ struct Line {
 /// A glyph that colours itself, in pen space at its line's origin: an
 /// emoji, or a layered `COLR` face's glyphs. Drawn after the words, with
 /// no shadow and no outline of their own - they are pictures, and a box
-/// around them would be a box. https://github.com/jub0t/concat/issues/276
+/// around them would be a box. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/276
 enum Mark {
     /// The font's own bitmap, decoded, at its box: left edge, top edge,
     /// and size in pixels.
@@ -1440,7 +1440,7 @@ fn paint(
     // layered face's paints - over the words: their colours are their
     // own, so the fill cannot have them. No shadow and no outline round
     // them either; they are pictures, and a box would be a box.
-    // https://github.com/jub0t/concat/issues/276
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/276
     for (row, line) in lines.iter().enumerate() {
         if line.marks.is_empty() {
             continue;
@@ -1955,7 +1955,7 @@ mod tests {
         (top, bottom)
     }
 
-    // ── the box: https://github.com/jub0t/concat/issues/119 ──
+    // ── the box: https://github.com/YunobiAirdrop/yunobi-cipcat/issues/119 ──
 
     /// A box sized by the style is exactly that size, plate and all, and
     /// the words sit centred inside it.
@@ -2358,7 +2358,7 @@ mod tests {
         assert!(png.png.starts_with(b"\x89PNG"));
     }
 
-    // ── colour emoji: https://github.com/jub0t/concat/issues/276 ──
+    // ── colour emoji: https://github.com/YunobiAirdrop/yunobi-cipcat/issues/276 ──
 
     /// The solid pixels whose colour passes: the words are white and
     /// their shadow and outline grey, so anything that passes is a

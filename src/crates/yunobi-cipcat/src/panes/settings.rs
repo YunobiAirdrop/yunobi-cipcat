@@ -844,7 +844,7 @@ fn quit_for_switch() {
 /// library hands it out through its hasher's seed, spelled in hex.
 /// The log level row's choices, in the order the sheet lists them:
 /// errors only, warnings, normal, debug, everything.
-/// https://github.com/jub0t/concat/issues/223
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/223
 const LOG_LEVELS: [log::LevelFilter; 5] = [
     log::LevelFilter::Error,
     log::LevelFilter::Warn,

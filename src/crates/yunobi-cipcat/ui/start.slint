@@ -742,7 +742,7 @@ component Rail inherits Rectangle {
         // No Settings row: the title strip's gear is on this screen as it
         // is on the editor's, and two doors to the same room on one page
         // read as clutter.
-        // https://github.com/jub0t/concat/issues/206
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/206
         RailItem {
             label: I18n.t("start.openProject");
             glyph: Glyph.folder;
@@ -1040,7 +1040,7 @@ export component StartScreen inherits Rectangle {
     /// A phone: no folder picker, so no Open and no Choose - projects live
     /// in the app's own folder, which the page already lists, and the
     /// location is shown rather than typed. See platform::pick_folder.
-    /// https://github.com/jub0t/concat/issues/222
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/222
     in property <bool> phone;
     property <bool> narrow: root.width < 680px;
     /// Under this the rail keeps its verbs but loses its words.
@@ -1227,7 +1227,7 @@ export component NewProjectDialog inherits Modal {
     /// A phone: no folder picker, so no Open and no Choose - projects live
     /// in the app's own folder, which the page already lists, and the
     /// location is shown rather than typed. See platform::pick_folder.
-    /// https://github.com/jub0t/concat/issues/222
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/222
     in property <bool> phone;
     property <bool> narrow: root.width < 680px;
     /// A project needs somewhere to go. Everything else has a default.

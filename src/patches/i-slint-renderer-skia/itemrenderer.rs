@@ -1105,7 +1105,7 @@ impl GlyphRenderer for SkiaItemRenderer<'_> {
         // Yunobi Cipcat: glyphs sit on whole pixels on a low-density screen. Skia's
         // subpixel positioning puts a stem between two pixels and the
         // rasteriser smears it over both, which on a 1x Windows desk read as
-        // blurred text (jub0t/concat#278); on a high-density screen the
+        // blurred text (YunobiAirdrop/yunobi-cipcat#278); on a high-density screen the
         // smear is a fraction of a hairline and the spacing is worth more.
         // Hinting is left to Skia's default, which snaps stems on its own
         // once positions are whole.

@@ -7,7 +7,7 @@ the change, and read it again.
 
 ## i-slint-renderer-skia 1.18.1
 
-Text on a 1x Windows screen read soft and grey (jub0t/concat#278). Three
+Text on a 1x Windows screen read soft and grey (YunobiAirdrop/yunobi-cipcat#278). Three
 changes, all marked `Yunobi Cipcat:` in the source:
 
 - `itemrenderer.rs`, `draw_glyph_run`: glyphs are positioned on whole

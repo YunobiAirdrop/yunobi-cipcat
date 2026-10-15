@@ -35,7 +35,7 @@ import { TimelineTool } from "model.slint";
 // Undo and redo are on the bar for whoever edits with a mouse or a finger
 // and never learns ⌘Z: the shortcut is in the tip, and the button greys
 // out when the history has nothing that way, the same truth the Edit menu
-// tells. https://github.com/jub0t/concat/issues/154
+// tells. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/154
 
 component Divider inherits Rectangle {
     width: 9px;
@@ -261,7 +261,7 @@ export component TimelineTray inherits Rectangle {
         }
         // And the razor, a tool rather than a verb: on, a click on a clip
         // cuts it where the pointer is. B turns it on and off.
-        // https://github.com/jub0t/concat/issues/241
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/241
         TrayButton {
             glyph: Glyph.razor;
             label: I18n.t("tray.splitTool");
@@ -359,7 +359,7 @@ export component TimelineTray inherits Rectangle {
         }
         // The magnetic timeline, beside the snap it is so often mistaken
         // for: snap is where a drag lands, magnetic is that a delete or a
-        // trim leaves no hole. https://github.com/jub0t/concat/issues/106
+        // trim leaves no hole. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
         TrayButton {
             glyph: Glyph.fold;
             label: I18n.t("tray.magneticTimelineDeletingTrimming");

@@ -231,7 +231,7 @@ impl DecodeOptions {
 /// some phones write. A file tagged the wrong one, or tagged nothing and
 /// holding the other, shows grey where it should show black or clips
 /// its shadows and highlights: the washed-out or crushed picture.
-/// https://github.com/jub0t/concat/issues/103
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, Default)]
 pub enum ColorRange {
     /// 16-235: "tv", "MPEG", "video" or "limited" range. The default
@@ -255,7 +255,7 @@ impl ColorRange {
     /// and what a camera writes. A screen recording holding full-range
     /// pixels and saying nothing is the one case this cannot know, and is
     /// what the override is for.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     pub fn implied(codec: ffmpeg::codec::Id, pixel: Pixel) -> ColorRange {
         use ffmpeg::codec::Id;
         let picture = matches!(
@@ -1324,7 +1324,7 @@ mod tests {
     /// an SDR file it is the one term added to the fit, on a wide one it
     /// replaces the file's tag among the conversion's terms, and with no
     /// override nothing is said and the frames' own tag decides.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     #[test]
     fn a_named_range_overrides_the_files_tag() {
         use ffmpeg::color::{Primaries, Range, Space, TransferCharacteristic as Transfer};

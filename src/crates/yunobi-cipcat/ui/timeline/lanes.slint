@@ -185,10 +185,10 @@ component Clip inherits Rectangle {
     /// under its frames, a third of the body and never a sliver. A video
     /// that has gone quiet - muted, or its sound detached - keeps the
     /// empty band, so it is tellable from one that never spoke
-    /// (https://github.com/jub0t/concat/issues/137); a file with no sound
+    /// (https://github.com/YunobiAirdrop/yunobi-cipcat/issues/137); a file with no sound
     /// at all has none, and its frames take the whole body, since a band
     /// there promised a sound that was never in it.
-    /// https://github.com/jub0t/concat/issues/283
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/283
     property <bool> banded: root.item.kind == ClipKind.video && root.item.has-audio;
     property <length> band-h: root.banded
         ? Math.clamp(root.body-h * 0.34, 8px, 30px)
@@ -587,7 +587,7 @@ component Clip inherits Rectangle {
             // stays where it was. Short of them it is nothing at all: a
             // hand that shook on a click reported a move of a pixel or two,
             // which snapped, or rounded, the clip somewhere else.
-            // https://github.com/jub0t/concat/issues/247
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/247
             if (Math.abs(self.absolute-position.x + self.mouse-x - self.origin-x) > 4px
                 || Math.abs(self.absolute-position.y + self.mouse-y - self.origin-y) > 4px) {
                 self.travelled = true;
@@ -1454,7 +1454,7 @@ export component Lanes inherits Rectangle {
             // here, with the last drag's pointer still in `pointer-x`, a
             // click near the lanes' edge scrolled the view and moved the
             // clip by the last drag's distance.
-            // https://github.com/jub0t/concat/issues/247
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/247
             pressed(additive, edge) => {
                 root.press-scroll = root.scroll-left;
                 root.drag-seconds = 0;
@@ -1785,7 +1785,7 @@ export component Lanes inherits Rectangle {
         // Where the split tool will cut: the frame under the pointer, as a
         // line across the lanes in the accent, so it reads as a blade and
         // not as the dim hover line. Under the playhead, over the clips.
-        // https://github.com/jub0t/concat/issues/241
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/241
         if root.tool == TimelineTool.split && root.hover-on: Rectangle {
             x: root.at(Math.round(root.seconds-at(root.hover-x) * root.frame-rate)
                 / Math.max(1, root.frame-rate));

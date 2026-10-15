@@ -32,7 +32,7 @@ fn main() -> Result<(), slint::PlatformError> {
     yunobi-cipcat::open_logging(None);
     // A failure here is the one this binary would otherwise swallow: with
     // no console, the runtime's "Error: ..." on standard error is lost.
-    // https://github.com/jub0t/concat/issues/135
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/135
     let launch = launch
         .map_err(slint::PlatformError::Other)
         .inspect_err(yunobi-cipcat::report_startup_failure)?;

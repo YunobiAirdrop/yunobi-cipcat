@@ -70,7 +70,7 @@ impl Gpu {
         // Broadwell-era chips do not have - the adapter that comes back is
         // WARP, Windows' software rasteriser. The window still opens on it;
         // see `is_software` and platform.rs for what that changes.
-        // https://github.com/jub0t/concat/issues/135
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/135
         let info = adapter.get_info();
         log::info!(
             "GPU adapter: {} ({:?}, {:?}, {})",
@@ -101,7 +101,7 @@ impl Gpu {
         .ok()?;
         // Said in the log when it dies, with wgpu's reason: the one line a
         // report of "the GPU device was lost" needs, which until now there
-        // was none of. https://github.com/jub0t/concat/issues/223
+        // was none of. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/223
         device.set_device_lost_callback(|reason, message| {
             log::error!("the window's GPU device was lost ({reason:?}): {message}");
         });
@@ -141,7 +141,7 @@ impl Gpu {
 /// The adapter's driver as the log names it: the driver and its version
 /// where the API reports them, and "driver unknown" where it does not -
 /// Direct3D 12 reports neither, and an empty "driver )" read as a fault.
-/// https://github.com/jub0t/concat/issues/223
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/223
 pub fn driver_of(info: &wgpu::AdapterInfo) -> String {
     let named = [info.driver.trim(), info.driver_info.trim()]
         .into_iter()

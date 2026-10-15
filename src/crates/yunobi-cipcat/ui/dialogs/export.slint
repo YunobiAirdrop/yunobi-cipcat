@@ -353,7 +353,7 @@ component OutputSection inherits DialogSection {
         // The timeline's own size, and the ladder it sits on for scale:
         // a 9:16 edit is 1080 × 1920, not 1920 × 1080, and it exports at
         // the size it was cut at - the other rungs are shown and cannot be
-        // picked. https://github.com/jub0t/concat/issues/109
+        // picked. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/109
         Select {
             current: root.data.resolution;
             options: root.data.resolutions;
@@ -470,7 +470,7 @@ component QualitySection inherits DialogSection {
 // written in. Limited is what every player and YouTube expect; full is for
 // screen content bound for a PC player that reads the tag. Both are tagged
 // true, so the choice is about the player, not about the picture.
-// https://github.com/jub0t/concat/issues/103
+// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
 component AdvancedSection inherits VerticalLayout {
     in property <ExportData> data;
     in property <bool> first;

@@ -658,7 +658,7 @@ export component SettingsDialog inherits Modal {
                 // most days; Debug and Everything are for when a report
                 // asks, and the file grows faster for them. CONCAT_LOG in
                 // the environment overrides this for one run.
-                // https://github.com/jub0t/concat/issues/223
+                // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/223
                 DialogSection {
                     title: I18n.t("settings.logLevel");
                     hint: I18n.t("settings.logLevelHint");
@@ -679,7 +679,7 @@ export component SettingsDialog inherits Modal {
                 // Off, a delete leaves its hole and a trim moves one edge.
                 // On, the lane closes up behind either - the magnetic
                 // timeline of the mainstream editors, asked for in
-                // https://github.com/jub0t/concat/issues/106
+                // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
                 DialogSection {
                     title: I18n.t("common.magneticTimeline");
                     hint: I18n.t("settings.deletingClipPullsWhat");
@@ -919,7 +919,7 @@ export component SettingsDialog inherits Modal {
                 // anyway. The backend takes it as a multiplier rather than as
                 // a property, so Rust hands the window a scale-factor event
                 // to apply it (lib.rs, `on_settings_scale_changed`).
-                // https://github.com/jub0t/concat/issues/320
+                // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
                 if !root.phone: DialogSection {
                     title: I18n.t("settings.scale");
                     hint: I18n.t("settings.scaleHint");

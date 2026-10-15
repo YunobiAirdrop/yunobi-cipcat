@@ -341,7 +341,7 @@ pub fn select_backend(
         // app just never appeared. Setting it here is what the reporter did
         // by hand, and the window, the editing and the export all worked on
         // WARP - so the app does it for them and says so in the log.
-        // https://github.com/jub0t/concat/issues/135
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/135
         Some(gpu) if gpu.is_software() => {
             log::warn!("the GPU adapter is a software rasteriser; the window will render slowly");
             // SAFETY: the process is single-threaded at this point - the
@@ -395,8 +395,8 @@ pub fn select_backend(
     // decorations off is the Slint window's `no-frame` (app.slint), which
     // the winit backend re-applies after the window is made. On Wayland
     // without it GNOME's bar came back above the strip:
-    // https://github.com/jub0t/concat/issues/97
-    // https://github.com/jub0t/concat/issues/145
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/97
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/145
     //
     // None of it for the phone shell shown on a desk: that has no strip of
     // its own, so the platform's title bar stays, buttons and all, above
@@ -441,7 +441,7 @@ pub fn select_backend(
 /// double-clicked build has: on Windows a GUI subsystem binary has no
 /// standard error, and the app was exiting with the reason written to
 /// nowhere. The log file is named so the reader has something to attach.
-/// https://github.com/jub0t/concat/issues/135
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/135
 pub fn report_startup_failure(error: &str) {
     #[cfg(not(any(target_os = "android", target_os = "ios")))]
     {

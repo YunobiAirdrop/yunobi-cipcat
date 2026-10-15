@@ -661,7 +661,7 @@ export component PreviewPane inherits Rectangle {
     // The stage's own gestures; see the Editor global for what each means.
     callback stage-pressed(x: float, y: float, additive: bool);
     /// The picture's right-click menu chose Save Video Frame As.
-    /// https://github.com/jub0t/concat/issues/238
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/238
     callback save-frame();
     /// Bumped on every right-click on the picture; opens `frame-menu`.
     property <int> frame-token;
@@ -1170,7 +1170,7 @@ export component PreviewPane inherits Rectangle {
 
     // The picture's right-click menu: one row, hosted here so its surface
     // is the whole pane rather than the picture it was opened over.
-    // https://github.com/jub0t/concat/issues/238
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/238
     frame-menu := ContextMenu {
         x: 0;
         y: 0;

@@ -76,8 +76,8 @@ export component App inherits Window {
     // them off with: the winit backend re-applies `no-frame` to the
     // window after it is made, over whatever the attributes asked for, so
     // a hook alone left GNOME drawing its bar above ours:
-    // https://github.com/jub0t/concat/issues/97
-    // https://github.com/jub0t/concat/issues/145
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/97
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/145
     // Not for the phone shell on a desk, which draws no buttons of its own
     // and keeps the platform's bar above the phone's screen; see platform.rs.
     no-frame: root.own-window-buttons && !root.phone;
@@ -543,7 +543,7 @@ export component App inherits Window {
             if (event.text == Key.Space) { Editor.play-toggled(); return accept; }
             // Shift closes the gap the deletion leaves - the ripple delete
             // of every other editor, on the key they all use for it.
-            // https://github.com/jub0t/concat/issues/106
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
             if (event.text == Key.Delete || event.text == Key.Backspace) {
                 if (event.modifiers.shift) {
                     Editor.shortcut("ripple-delete");
@@ -570,7 +570,7 @@ export component App inherits Window {
             let letter = event.text.to-lowercase();
             // B is the razor: the split tool, on and off, the key every
             // editor cuts with. The chord B above splits at the playhead.
-            // https://github.com/jub0t/concat/issues/241
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/241
             if (letter == "b") { Editor.shortcut("split-tool"); return accept; }
             if (letter == "n") { Editor.shortcut("snap"); return accept; }
             if (letter == "s") { Editor.shortcut("preview-axis"); return accept; }

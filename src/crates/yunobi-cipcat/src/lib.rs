@@ -123,7 +123,7 @@ pub fn open_logging(extra: Option<Box<dyn log::Log>>) {
 /// what a packaged GUI build has no console for. Each entry point calls
 /// this on the error before letting it go, so the reason is in the log and
 /// in a dialog, not only in a console that was never there.
-/// https://github.com/jub0t/concat/issues/135
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/135
 pub fn report_startup_failure(error: &slint::PlatformError) {
     let error = error.to_string();
     log::error!("could not start: {error}");
@@ -166,7 +166,7 @@ fn start(project: Option<std::path::PathBuf>, smoke: bool) -> Result<(), slint::
     // preferences are normally read. A remembered scale overrides the
     // display's own; nothing remembered leaves an inherited
     // SLINT_SCALE_FACTOR alone, so a value set by hand still wins.
-    // https://github.com/jub0t/concat/issues/320
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
     if std::env::var_os("SLINT_SCALE_FACTOR").is_none()
         && let Ok(dirs) = yunobi_cipcat_host::AppDirs::locate()
         && let Some(percent) = prefs::Preferences::load(&dirs).ui_scale
@@ -270,7 +270,7 @@ fn start(project: Option<std::path::PathBuf>, smoke: bool) -> Result<(), slint::
     // The interface scale: the row on Settings > Appearance reads the index
     // off the Theme global, and the window was already made at the scale the
     // environment asked for above, so this only lines the two up.
-    // https://github.com/jub0t/concat/issues/320
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
     app.global::<Theme>()
         .set_ui_scale(studio.prefs.scale_index() as i32);
 
@@ -1479,7 +1479,7 @@ fn start(project: Option<std::path::PathBuf>, smoke: bool) -> Result<(), slint::
     // screen. "System" hands back the scale the platform itself reports,
     // which winit knows whatever SLINT_SCALE_FACTOR last told Slint. The row
     // reads its value off the Theme global, so that is set here too.
-    // https://github.com/jub0t/concat/issues/320
+    // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
     app.on_settings_scale_changed({
         move |index| {
             log::info!("settings: ui scale {index}");

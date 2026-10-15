@@ -353,7 +353,7 @@ pub struct ExportRequest {
     /// The levels the file is written in and tagged with, by name:
     /// "limited" (16-235, what every player expects) or "full" (0-255).
     /// Limited when a request does not say.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     #[serde(default, deserialize_with = "range_by_name")]
     pub color_range: yunobi_cipcat_media::ColorRange,
     /// What the timeline is output in. SDR when a request does not say.

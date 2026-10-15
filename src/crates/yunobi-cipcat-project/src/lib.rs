@@ -513,7 +513,7 @@ mod tests {
         assert_eq!(start_of(&editor, &next[0]), 20.0);
     }
 
-    // ── ripple delete: https://github.com/jub0t/concat/issues/106 ──
+    // ── ripple delete: https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106 ──
 
     #[test]
     fn ripple_delete_closes_the_gap_on_its_own_track_only() {
@@ -697,7 +697,7 @@ mod tests {
         }
     }
 
-    // ── magnetic trim: https://github.com/jub0t/concat/issues/106 ──
+    // ── magnetic trim: https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106 ──
 
     fn trim(clip_id: &str, edge: TrimEdge, delta: f64, ripple: bool) -> Command {
         Command::TrimClip {
@@ -910,7 +910,7 @@ mod tests {
 
     /// A document from before the box had a height reads as no height,
     /// and a hand-edited one cannot make it negative or not a number.
-    /// https://github.com/jub0t/concat/issues/119
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/119
     #[test]
     fn a_text_style_without_a_box_height_reads_as_the_words_own() {
         let style: TextStyle =
@@ -2610,7 +2610,7 @@ mod tests {
 
     /// A media item's colour range is set, saved, cleared, and undone
     /// like any edit; an unknown item is a no-op that records nothing.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     #[test]
     fn a_medias_colour_range_is_an_undoable_edit_that_round_trips() {
         use crate::model::ColorRange;

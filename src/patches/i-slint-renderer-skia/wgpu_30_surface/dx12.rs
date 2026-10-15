@@ -44,7 +44,7 @@ unsafe fn wrap_dx12_texture(
 }
 
 // Yunobi Cipcat: the window's text is drawn with ClearType, as every other program
-// on a Windows desk is, when the desk has it on (jub0t/concat#278). Greyscale
+// on a Windows desk is, when the desk has it on (YunobiAirdrop/yunobi-cipcat#278). Greyscale
 // coverage on a 1x screen reads soft and grey beside the system's own text;
 // LCD coverage triples the horizontal resolution a stem is drawn at.
 //

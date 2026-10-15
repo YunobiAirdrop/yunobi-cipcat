@@ -221,7 +221,7 @@ fn even(value: u32) -> u32 {
 /// anything else - a decimal is for reading, and export must never be
 /// handed one. The rates cameras and screens run at, from a stop-motion
 /// ten to a game capture's sixty; anything else is typed in as a custom
-/// rate. https://github.com/jub0t/concat/issues/199
+/// rate. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/199
 pub const RATES: [(&str, i64, i64); 11] = [
     ("10", 10, 1),
     ("20", 20, 1),
@@ -439,7 +439,7 @@ pub enum Gesture {
     /// the same terms as [`Gesture::TextWidth`] pulls the width. Before
     /// this the two grips fell through to a stretch, and a caption pulled
     /// to fit came out with its glyphs squashed.
-    /// https://github.com/jub0t/concat/issues/119
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/119
     TextHeight {
         clip: String,
         centre: (f64, f64),
@@ -3492,7 +3492,7 @@ impl Studio {
     /// every selected clip when two or more are selected and all of them
     /// are titles - a batch of captions styled together. Anything else
     /// selected together is nothing the inspector edits.
-    /// https://github.com/jub0t/concat/issues/224
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/224
     pub fn edit_targets(&self) -> Vec<String> {
         if let Some(id) = self.sole_selection() {
             return vec![id];
@@ -4394,7 +4394,7 @@ impl Studio {
                 // click: nothing moved, and a MoveClips of the clips onto
                 // their own places is still an undo step and still a pass
                 // through the drop's rules, which can put a clip elsewhere.
-                // https://github.com/jub0t/concat/issues/247
+                // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/247
                 if moved_any(&moves, |id| self.clip(id)) {
                     self.apply(Command::MoveClips { moves });
                 }
@@ -4423,7 +4423,7 @@ impl Studio {
                         },
                         delta,
                         // Magnetic: the lane closes behind the edge.
-                        // https://github.com/jub0t/concat/issues/106
+                        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
                         ripple: self.prefs.magnetic,
                     });
                     // Trim follow: a magnetic head trim slides the clip back
@@ -4845,7 +4845,7 @@ impl Studio {
     /// and the one generated captions are set in: its family, weight,
     /// colours, stroke, shadow and background, never its words. Kept in
     /// the preferences, so it outlives the project.
-    /// https://github.com/jub0t/concat/issues/224
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/224
     pub fn use_title_style_for_new(&mut self) {
         let Some(mut style) = self
             .edit_targets()
@@ -5028,7 +5028,7 @@ impl Studio {
         // Then pulled along each axis, as the compositor pulls it - a
         // picture, that is. A title's box is its style's, and the compositor
         // never stretches one; see titles.rs.
-        // https://github.com/jub0t/concat/issues/119
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/119
         let (w, h) = if clip.kind == model::ClipKind::Text {
             (w, h)
         } else {
@@ -5262,7 +5262,7 @@ impl Studio {
             }
         } else if (grip == 5 || grip == 7) && clip.kind == model::ClipKind::Text {
             // And the top and bottom grips size its box, never its glyphs.
-            // https://github.com/jub0t/concat/issues/119
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/119
             Gesture::TextHeight {
                 clip: id.to_owned(),
                 centre,
@@ -5651,7 +5651,7 @@ impl Studio {
             // its constant - see `write_keyable` - so the keys the gesture
             // put on the echo have to be committed too, or the picture
             // snaps back to the ride the document still holds.
-            // https://github.com/jub0t/concat/issues/228
+            // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/228
             commands.extend(key_commands(&id, before, after));
             // A title's wrap width, from its side grips.
             if after.text != before.text {
@@ -6407,7 +6407,7 @@ impl Studio {
     /// and put in the bin, selected, so it can go straight onto a lane as
     /// a freeze frame. The dialog opens on the next turn of the loop, as
     /// every dialog reached from a right-click menu must.
-    /// https://github.com/jub0t/concat/issues/238
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/238
     pub fn save_frame_as(&mut self) {
         if self.playing {
             self.pause();
@@ -6543,7 +6543,7 @@ impl Studio {
     /// The split tool pressed clip `id` at `seconds`: one cut, on the
     /// frame nearest the press, unless it is within a frame of either end
     /// or the lane is locked.
-    /// https://github.com/jub0t/concat/issues/241
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/241
     pub fn split_clip_at(&mut self, id: &str, seconds: f32) {
         let Some(clip) = self.clip(id).cloned() else {
             return;
@@ -6578,7 +6578,7 @@ impl Studio {
 
     /// Ripple delete (⇧⌫): the selection goes and each lane closes behind
     /// it, so a rough cut needs no dragging-left after every deletion.
-    /// https://github.com/jub0t/concat/issues/106
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
     pub fn ripple_delete_selected(&mut self) {
         if self.selected_transition().is_some() {
             self.remove_transition();
@@ -7925,7 +7925,7 @@ impl Studio {
         editor.set_selected_count(self.selection.len() as i32);
         // The tray's undo and redo buttons grey out on these; the Edit menu
         // asks the session itself when it opens.
-        // https://github.com/jub0t/concat/issues/154
+        // https://github.com/YunobiAirdrop/yunobi-cipcat/issues/154
         let (can_undo, can_redo) = self.session.as_ref().map_or((false, false), |session| {
             (session.can_undo(), session.can_redo())
         });
@@ -9706,7 +9706,7 @@ impl Studio {
     /// it read as a property of the cut. Auto is the file's tag, and the
     /// codec's convention where there is none; see
     /// `yunobi_cipcat_media::ColorRange::implied`.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     fn media_menu(&self, id: &str) -> Vec<MenuItemData> {
         let Some(item) = self.project().media_by_id(id) else {
             return Vec::new();
@@ -10264,7 +10264,7 @@ impl Studio {
     /// what came off: the lane it lands on may be a new one, out of view,
     /// and a detach that changed nothing anyone could see read as one that
     /// did nothing. One that cannot happen says why instead of nothing.
-    /// https://github.com/jub0t/concat/issues/310
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/310
     fn detach_audio(&mut self, clip: &Clip) {
         let has_audio = self
             .project()

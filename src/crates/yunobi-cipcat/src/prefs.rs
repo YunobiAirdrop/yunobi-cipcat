@@ -14,7 +14,7 @@ const FILE: &str = "settings.json";
 /// The interface scales Settings > Appearance offers, smallest first, as
 /// percents of the display's own scale. Nothing on the list - and no value
 /// at all - leaves the window at the scale the platform hands it.
-/// https://github.com/jub0t/concat/issues/320
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
 pub const UI_SCALES: [u32; 5] = [100, 125, 150, 175, 200];
 
 /// Remembered preferences.
@@ -37,7 +37,7 @@ pub struct Preferences {
     /// display. Settings > Appearance picks it, and it is remembered here
     /// for the window a launch makes; the window that is open is rescaled in
     /// place the moment the choice is made.
-    /// https://github.com/jub0t/concat/issues/320
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/320
     pub ui_scale: Option<u32>,
     /// The chosen transcriber model id, e.g. "base.en".
     pub transcriber_model: Option<String>,
@@ -59,7 +59,7 @@ pub struct Preferences {
     /// The magnetic timeline: a delete and a trim close the gap they would
     /// leave, on the lane they happen on. Off by default, because a gap is
     /// sometimes the point; ⇧⌫ ripples either way.
-    /// https://github.com/jub0t/concat/issues/106
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
     pub magnetic: bool,
     /// Trim follow: while a clip's edge is dragged, the playhead rides the
     /// edge, so the monitor shows the exact frame the cut lands on. Off by

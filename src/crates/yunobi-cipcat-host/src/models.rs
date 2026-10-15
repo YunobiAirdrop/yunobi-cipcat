@@ -27,7 +27,7 @@
 use std::path::Path;
 
 /// The repository the mirror lives on.
-pub const REPO: &str = "jub0t/concat";
+pub const REPO: &str = "YunobiAirdrop/yunobi-cipcat";
 
 /// The release every model is mirrored on.
 ///

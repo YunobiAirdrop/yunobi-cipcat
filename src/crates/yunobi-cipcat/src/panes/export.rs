@@ -91,7 +91,7 @@ pub struct ExportPane {
     pub sdr: bool,
     /// Index into `ColorRange::ALL`: 0 limited, 1 full. Read only while
     /// the Advanced section is open, like the bitrate.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     pub color_range: usize,
     /// The Advanced section is open: bitrate controls show, and the size
     /// estimate reads the chosen bitrate.
@@ -322,7 +322,7 @@ impl ExportPane {
 
     /// The rung of the ladder that is the project's own size: the one
     /// the sheet lets be picked, since an edit exports at the size it was
-    /// cut at. https://github.com/jub0t/concat/issues/109
+    /// cut at. https://github.com/YunobiAirdrop/yunobi-cipcat/issues/109
     fn own_rung(studio: &Studio) -> usize {
         let own = Self::own_short(studio);
         Self::ladder(studio)

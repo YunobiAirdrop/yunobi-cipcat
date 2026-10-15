@@ -654,7 +654,7 @@ const JOIN_EPSILON: f64 = 1e-6;
 /// it would land in front of what was in front of it. A span reaching past
 /// the clip's start counts only up to it, and nothing is pulled before
 /// zero.
-/// https://github.com/jub0t/concat/issues/106
+/// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/106
 fn close_gaps(timeline: &mut Timeline, removed: &[(String, f64, f64)]) {
     let behind_a_span = |clip: &Clip| {
         removed

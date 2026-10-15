@@ -40,7 +40,7 @@ pub struct ExportSpec {
     pub bitrate_kbps: u32,
     /// The levels the file is written in and tagged with. Video range,
     /// 16-235, unless the sheet's Advanced section says full.
-    /// https://github.com/jub0t/concat/issues/103
+    /// https://github.com/YunobiAirdrop/yunobi-cipcat/issues/103
     pub color_range: ColorRange,
     /// An HDR timeline written as HDR, its own HLG or PQ, rather than
     /// tone-mapped to SDR. Nothing for an SDR timeline.
