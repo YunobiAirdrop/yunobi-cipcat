@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! Reverse: the span a clip covers of a media file, written backwards,
 //! once.

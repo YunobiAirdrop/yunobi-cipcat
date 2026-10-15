@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! The timeline's view: where it is looking, how close, with which tool,
 //! and what the lanes know about a track that the document does not.

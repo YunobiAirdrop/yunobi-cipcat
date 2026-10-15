@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! Generates the gRPC service from `proto/yunobi-cipcat.proto` when the `grpc`
 //! feature is on. protox compiles the proto in Rust, so nothing needs

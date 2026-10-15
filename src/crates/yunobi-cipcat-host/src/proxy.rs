@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! Proxies: a smaller copy of a large file, written once into the
 //! project's cache, that playback and the filmstrips read instead of the

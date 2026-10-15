@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! The paused monitor's true frame.
 //!

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+// SPDX-FileCopyrightText: 2026 YunobiAirdrop (fork maintainer)
 
 //! The FFmpeg filter-chain builder for audio filters. Pictures are drawn by
 //! their packages' shaders on the GPU; sound is still FFmpeg's.
