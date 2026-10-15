@@ -1,0 +1,46 @@
+[package]
+name = "yunobi-cipcat-vision"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "What the engine sees in a picture: the person mask behind a cutout, the brush strokes that correct it, and the frame with its background taken away."
+
+# The renderer needs only the masks: reading them from the project's cache,
+# painting strokes over them and cutting a frame with the result. Finding
+# them is inference, and inference is a dependency tree the export path
+# should not carry, so it sits behind `infer` and the host turns it on.
+[features]
+infer = ["dep:ort"]
+
+[dependencies]
+yunobi-cipcat-core.workspace = true
+yunobi-cipcat-project.workspace = true
+# Masks on disk are eight-bit grey PNGs: a tenth the size of raw bytes, and
+# a file anyone can open to see what the model saw.
+png = "0.17"
+# ONNX Runtime. The platform's accelerator is a feature per target below;
+# the CPU provider is always there behind it.
+ort = { workspace = true, optional = true }
+
+[target.'cfg(target_vendor = "apple")'.dependencies]
+ort = { workspace = true, optional = true, features = ["coreml"] }
+
+# DirectML on Windows asks for the provider; whether it is there is the
+# runtime's to say. The bundles and CI link Microsoft's CPU build of ONNX
+# Runtime dynamically instead of the static DirectML one ort-sys would
+# download - that one is compiled for Haswell and kept the app from
+# starting on older CPUs (#313), and it imports a DirectML.dll many
+# machines only have an old copy of (#303). See build-app.yml's ONNX
+# Runtime (Windows) step. With the CPU build the provider fails to
+# register and ort carries on with the CPU one. The feature stays because
+# a build with no ORT_LIB_LOCATION (a developer's) downloads by feature,
+# and pyke publishes no Windows build without one.
+[target.'cfg(target_os = "windows")'.dependencies]
+ort = { workspace = true, optional = true, features = ["directml"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+ort = { workspace = true, optional = true, features = ["nnapi"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,340 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2026 Jareer and Yunobi Cipcat contributors
+
+import { I18n } from "../i18n.slint";
+import { Theme } from "../theme/theme.slint";
+import { Glyph, Icon } from "../icons.slint";
+import { Button, CopyChip, DialogRow, DialogSection, Modal, Progress } from "../primitives/modal.slint";
+import { SegmentedControl } from "../primitives/segmented-control.slint";
+import { Select } from "../primitives/select.slint";
+import { Switch } from "../inspector/controls.slint";
+
+// Captions: what the tray's Captions tool opens.
+//
+// Two sheets in one, and a switch between them: "Use voice from timeline".
+// On, the words are a clip's: one picked from the timeline's clips that
+// have sound, through the transcriber, cut to the words' own timing. Off,
+// they are a script typed here, one title per sentence at reading pace,
+// laid down from the playhead. The list holds only clips with sound, so a
+// silent video cannot be sent to the transcriber. The switch starts on
+// when the sheet is opened on a clip with sound - from the clip's menu, or
+// with one selected - and off otherwise. Then where the lines sit and how
+// big they are, and one button. While it runs
+// the sheet is the progress report: a transcription knows how far through
+// the sound it is, so it gets a real bar and not a sweep. The language is
+// the transcriber's to work out.
+
+export struct CaptionsSheetData {
+    open: bool,
+    /// "Use voice from timeline": the words come from a clip's sound.
+    from-voice: bool,
+    /// The timeline's clips with sound, by file and start.
+    sources: [string],
+    /// Row in `sources` of the clip to transcribe; -1 for none.
+    source: int,
+    text: string,
+    /// Row in the installed transcriber list.
+    model: int,
+    /// 0 Bottom, 1 Centre, 2 Top
+    placement: int,
+    /// 0 Small, 1 Medium, 2 Large
+    size: int,
+    running: bool,
+    /// 0..1: where the transcription surely is.
+    progress: float,
+    /// Where the step under way leaves the bar, 0..1.
+    ceiling: float,
+    /// Seconds that step should take.
+    step: float,
+    /// Seconds of the run still to go, once the work has been timed;
+    /// negative before.
+    left: float,
+    /// What the run is doing, in words.
+    stage: string,
+    /// A transcriber model is installed.
+    ready: bool,
+    /// Why the last run failed, when it did.
+    message: string,
+}
+
+export component CaptionsDialog inherits Modal {
+    in property <CaptionsSheetData> data;
+    /// The installed transcriber models, by name.
+    in property <[string]> models;
+
+    callback voice-toggled(on: bool);
+    callback source-changed(index: int);
+    callback text-edited(text: string);
+    callback model-changed(index: int);
+    callback placement-changed(index: int);
+    callback size-changed(index: int);
+    callback begin();
+    callback cancel();
+
+    property <bool> from-voice: root.data.from-voice;
+
+    open: root.data.open;
+    title: I18n.t("captions.captions");
+    glyph: Glyph.text-mark;
+    surface-width: 480px;
+    dismissable: !root.data.running;
+
+    // The script being typed, held apart from `data.text` the way the Field
+    // primitive holds its draft: a TextInput's binding is dropped on the
+    // first keystroke, so the sheet re-seeds it when it opens and never
+    // while it is being typed into.
+    property <string> draft;
+    /// The script has the caret. Kept up here because the box lives under
+    /// an `if`, and nothing outside one can reach into it.
+    property <bool> typing;
+    changed data => {
+        if (!root.typing) {
+            root.draft = root.data.text;
+        }
+    }
+    init => { root.draft = root.data.text; }
+
+    VerticalLayout {
+        // The switch, above both halves. A row of its own rather than a
+        // DialogRow, whose label column is too narrow for the words.
+        if !root.data.running: HorizontalLayout {
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 14px;
+            spacing: 10px;
+
+            Text {
+                horizontal-stretch: 1;
+                text: I18n.t("captions.useVoiceFromTimeline");
+                color: Theme.fg;
+                font-size: Theme.fs;
+                vertical-alignment: center;
+                wrap: word-wrap;
+            }
+
+            VerticalLayout {
+                alignment: center;
+                Switch {
+                    checked: root.from-voice;
+                    toggled(on) => { root.voice-toggled(on); }
+                }
+            }
+        }
+
+        if !root.data.running && root.from-voice: DialogSection {
+            first: true;
+            title: I18n.t("common.transcriber");
+
+            DialogRow {
+                label: I18n.t("common.audio");
+                Select {
+                    options: root.data.sources;
+                    current: root.data.source;
+                    placeholder: I18n.t("captions.noVoiceOnTimeline");
+                    enabled: root.data.sources.length > 0;
+                    changed(index) => { root.source-changed(index); }
+                }
+            }
+
+            DialogRow {
+                label: I18n.t("common.model");
+                Select {
+                    options: root.models;
+                    current: root.data.model;
+                    placeholder: I18n.t("common.noneInstalled");
+                    enabled: root.models.length > 0;
+                    changed(index) => { root.model-changed(index); }
+                }
+            }
+
+            if !root.data.ready: Text {
+                text: I18n.t("captions.downloadTranscriberModelFirst");
+                color: Theme.fg-muted;
+                font-size: Theme.fs-sm;
+                wrap: word-wrap;
+            }
+        }
+
+        if !root.data.running && !root.from-voice: DialogSection {
+            first: true;
+            title: I18n.t("common.script");
+
+            Rectangle {
+                height: 104px;
+                border-radius: Theme.r;
+                background: Theme.well;
+                border-width: 1px;
+                border-color: script.has-focus ? Theme.accent : Theme.line;
+                clip: true;
+
+                script := TextInput {
+                    x: 10px;
+                    y: 8px;
+                    width: parent.width - 20px;
+                    height: parent.height - 16px;
+                    text <=> root.draft;
+                    color: Theme.fg;
+                    font-size: Theme.fs-lg;
+                    single-line: false;
+                    wrap: word-wrap;
+                    selection-background-color: Theme.accent;
+                    selection-foreground-color: Theme.on-accent;
+                    changed has-focus => { root.typing = self.has-focus; }
+                    edited => { root.text-edited(self.text); }
+                    // Home and End are unbound in Slint on macOS and would
+                    // walk up to the window's playhead shortcuts.
+                    key-pressed(event) => {
+                        if (event.text == Key.Home) {
+                            self.set-selection-offsets(0, 0);
+                            return accept;
+                        }
+                        if (event.text == Key.End) {
+                            self.set-selection-offsets(1000000000, 1000000000);
+                            return accept;
+                        }
+                        return reject;
+                    }
+                }
+
+                if root.draft == "" && !script.has-focus: Text {
+                    x: 10px;
+                    y: 8px;
+                    text: I18n.t("captions.typeWordsPutScreen");
+                    color: Theme.fg-dim;
+                    font-size: Theme.fs-lg;
+                }
+            }
+        }
+
+        if !root.data.running: DialogSection {
+            title: I18n.t("captions.captions");
+
+            DialogRow {
+                label: I18n.t("captions.placement");
+                SegmentedControl {
+                    options: [I18n.t("common.bottom"), I18n.t("captions.centre"), I18n.t("common.top")];
+                    current: root.data.placement;
+                    changed(index) => { root.placement-changed(index); }
+                }
+            }
+
+            DialogRow {
+                label: I18n.t("common.size");
+                SegmentedControl {
+                    options: [I18n.t("common.small"), I18n.t("common.medium"), I18n.t("common.large")];
+                    current: root.data.size;
+                    changed(index) => { root.size-changed(index); }
+                }
+            }
+
+            Text {
+                text: root.from-voice
+                    ? I18n.t("captions.oneTitlePerPhrase")
+                    : I18n.t("captions.oneTitlePerSentence");
+                color: Theme.fg-dim;
+                font-size: Theme.fs-sm;
+                wrap: word-wrap;
+            }
+        }
+
+        Rectangle {
+            height: 1px;
+            background: Theme.line;
+        }
+
+        VerticalLayout {
+            padding: 14px;
+            spacing: 10px;
+
+            if root.data.message != "": Rectangle {
+                border-radius: Theme.r;
+                background: Theme.danger-soft;
+
+                HorizontalLayout {
+                    padding: 10px;
+                    spacing: 8px;
+
+                    VerticalLayout {
+                        alignment: start;
+                        Icon { glyph: Glyph.close; size: 13px; tint: Theme.danger; }
+                    }
+
+                    Text {
+                        horizontal-stretch: 1;
+                        text: root.data.message;
+                        color: Theme.danger;
+                        font-size: Theme.fs-sm;
+                        wrap: word-wrap;
+                    }
+
+                    VerticalLayout {
+                        alignment: start;
+                        CopyChip { text: root.data.message; }
+                    }
+                }
+            }
+
+            if root.data.running: VerticalLayout {
+                spacing: 8px;
+
+                row := HorizontalLayout {
+                    spacing: 8px;
+                    // The time left, once the work has been timed: counted down
+                    // from the last report, and gone in the last second.
+                    property <int> left: Math.ceil(Math.max(0, root.data.left - bar.since / 1s));
+
+                    Text {
+                        horizontal-stretch: 1;
+                        text: root.data.stage;
+                        color: Theme.fg;
+                        font-size: Theme.fs;
+                        vertical-alignment: center;
+                    }
+
+                    if root.data.left >= 0 && row.left > 0: Text {
+                        text: I18n.t2("common.aboutLeft", "\{Math.floor(row.left / 60)}",
+                            (Math.mod(row.left, 60) < 10 ? "0" : "") + "\{Math.mod(row.left, 60)}");
+                        color: Theme.fg-dim;
+                        font-size: Theme.fs;
+                        vertical-alignment: center;
+                    }
+
+                    Text {
+                        text: "\{Math.floor(bar.shown * 100)}%";
+                        color: Theme.fg-muted;
+                        font-family: Theme.font-technical;
+                        font-size: Theme.fs;
+                        vertical-alignment: center;
+                    }
+                }
+
+                bar := Progress {
+                    value: root.data.progress;
+                    ceiling: root.data.ceiling;
+                    step: root.data.step * 1s;
+                    live: true;
+                }
+            }
+
+            if root.data.running: HorizontalLayout {
+                alignment: start;
+                Button {
+                    label: I18n.t("common.cancel");
+                    glyph: Glyph.close;
+                    ghost: true;
+                    clicked => { root.cancel(); }
+                }
+            }
+
+            if !root.data.running: Button {
+                block: true;
+                primary: true;
+                large: true;
+                glyph: Glyph.text-mark;
+                label: root.from-voice ? I18n.t("captions.generateCaptions") : I18n.t("captions.addCaptions");
+                enabled: root.from-voice ? root.data.ready && root.data.source >= 0 : root.draft != "";
+                clicked => { root.begin(); }
+            }
+        }
+    }
+}

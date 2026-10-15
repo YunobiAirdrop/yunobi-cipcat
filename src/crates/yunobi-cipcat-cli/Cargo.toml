@@ -1,0 +1,34 @@
+[package]
+name = "yunobi-cipcat-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Command line driver for the Yunobi Cipcat engine."
+
+# `yunobi-cipcat` is the editor window's binary; the driver gets the suffix.
+[[bin]]
+name = "yunobi-cipcat-cli"
+path = "src/main.rs"
+
+[dependencies]
+yunobi-cipcat-core.workspace = true
+yunobi-cipcat-media.workspace = true
+yunobi-cipcat-render.workspace = true
+# The `api` command: the Yunobi Cipcat API over stdin and stdout. The `serve`
+# command: the same on a socket.
+yunobi-cipcat-api.workspace = true
+yunobi-cipcat-server.workspace = true
+serde_json.workspace = true
+# `preview` draws one effect's card, as the window does; `check` loads
+# packages and runs their probes.
+yunobi-cipcat-effects.workspace = true
+yunobi-cipcat-host.workspace = true
+clap.workspace = true
+
+[features]
+# `serve --grpc`. Off by default; see yunobi-cipcat-server.
+grpc = ["yunobi-cipcat-server/grpc"]
+
+[lints]
+workspace = true
